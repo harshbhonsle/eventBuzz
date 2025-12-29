@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import {errorHandler} from "./middleware/errorHandler";
-
+import authRoutes from "./routes/authRoutes"
 import db from "./config/db"
 
 
@@ -17,6 +17,8 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     console.log("testing")
 });
+
+app.use("/api/auth", authRoutes);
 
 // error handler
 app.use(errorHandler);
