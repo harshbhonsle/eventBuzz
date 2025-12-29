@@ -1,0 +1,50 @@
+# -------------------------
+# Node.js / Server ignores
+# -------------------------
+server/node_modules/
+server/dist/
+server/build/
+server/*.tsbuildinfo
+server/logs/
+server/*.log
+server/npm-debug.log*
+server/yarn-debug.log*
+server/yarn-error.log*
+server/.env
+server/.env.local
+server/.env.*.local
+server/coverage/
+server/tmp/
+server/temp/
+
+# -------------------------
+# Client 
+# -------------------------
+client/node_modules/
+client/build/
+client/dist/
+client/.env
+client/.env.local
+client/.env.*.local
+client/coverage/
+client/.next/          # Next.js
+client/.nuxt/          # Nuxt.js
+client/.vite/          # Vite cache
+client/.angular/       # Angular cache
+client/.parcel-cache/  # Parcel cache
+
+# -------------------------
+# General ignores
+# -------------------------
+*.log
+logs/
+*.swp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Testing / Coverage
+# -------------------------
+coverage/
