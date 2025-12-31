@@ -13,6 +13,6 @@ const UserSchema : Schema<IUser> = new Schema({
     role:{type:String , enum:["admin", "student"], default: "student"}
 })
 
-UserSchema.index({ email: 1 });
+;
 
 export default mongoose.model<IUser>("User",UserSchema);
