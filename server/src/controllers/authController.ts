@@ -12,7 +12,13 @@ export const register = asyncHandler(async(req:Request, res:Response)=>{
     const {email, password,role} = req.body;
 
     const hashedPassword = await bcrypt.hash(password,10);
-    const user = new User({email, password:hashedPassword,role});
+    const user = new User
+    ({
+        email, 
+        password:hashedPassword,
+        role:"student"}
+    );
+    
     await user.save();
     // token 
     const token = jwt.sign(
