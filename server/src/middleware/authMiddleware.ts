@@ -6,7 +6,7 @@ import { ApiError } from "../utils/apiError";
 
 export const authMiddleware = (roles: string[]=[])=>{
     return(req:Request, res:Response, next:NextFunction)=>{
-        const token = req.headers.authorization?.split(" ")[1];
+        const token = req.cookies.authToken;
         if(!token) throw new ApiError(403,"No token provided");
 
         try{
