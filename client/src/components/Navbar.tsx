@@ -1,31 +1,26 @@
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { FiLogIn, FiUserPlus } from "react-icons/fi";
 import ThemeToggle from "./toggleButton";
 
 const Navbar = () => {
-  const auth = useContext(AuthContext);
-
   return (
-    <nav className="h-full px-4 flex items-center justify-between bg-light text-light transition-theme  ">
-      {/* Left spacer */}
-      <div className="w-1/4" />
+    <nav className="w-full bg-theme transition-colors duration-300 ">
+      <div className="flex flex-row justify-end items-center px-4 py-3 gap-2 md:gap-3 flex-nowrap">
 
-      {/* Center title */}
-      <div className="w-1/2 text-center ">
-        <h1 className="text-5xl  font-semibold tracking-wide">EventBuzz</h1>
-      </div>
+        {/* Login Button */}
+        <button className="flex items-center gap-1 px-3 py-1.5 text-sm md:text-base border border-primary rounded-md hover:bg-primary hover:text-bg transition-colors duration-300">
+          <FiLogIn className="text-lg" />
+          Login
+        </button>
 
-      {/* Right controls */}
-      <div className="w-1/4 flex justify-end items-center gap-3">
+        {/* Signup Button */}
+        <button className="flex items-center gap-1 px-3 py-1.5 text-sm md:text-base border border-primary rounded-md hover:bg-primary hover:text-bg transition-colors duration-300">
+          <FiUserPlus className="text-lg" />
+          Signup
+        </button>
+
+        {/* Theme Toggle */}
         <ThemeToggle />
-        {auth?.user && (
-          <button
-            onClick={auth.logout}
-            className="px-3 py-1 text-sm border border-neutral-600 rounded hover:bg-neutral-800 transition"
-          >
-            Logout
-          </button>
-        )}
+
       </div>
     </nav>
   );
